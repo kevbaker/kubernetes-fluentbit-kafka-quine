@@ -1,15 +1,15 @@
 # Kubernetes / Quine Project
 
 ---
+<p float="left">
+<img src="extra/images/Kubernetes_Logo.png" height="50" style="padding-right:40px">
 
-<img src="extra/images/Kubernetes_Logo.png" height="50" style="float:right;padding-right:40px">
+<img src="extra/images/Fluentbit_Logo.png" height="50" style="padding-right:40px">
 
-<img src="extra/images/Fluentbit_Logo.png" height="50" style="float:right;padding-right:40px">
+<img src="extra/images/Kafka_Logo.png" height="40" style="padding-right:40px">
 
-<img src="extra/images/Kafka_Logo.png" height="40" style="float:right;padding-right:40px">
-
-<img src="extra/images/Quine_Logo.svg" height="40" style="float:right;padding-right:40px"> 
-
+<img src="extra/images/Quine_Logo.svg" height="40" style="padding-right:40px"> 
+</p>
 ---
 
 
