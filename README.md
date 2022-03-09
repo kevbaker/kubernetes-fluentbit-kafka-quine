@@ -1,7 +1,7 @@
 # Kubernetes / Quine Project
 
 ---
-<p float="left">
+<p align="center" width="100%">
 <img src="extra/images/Kubernetes_Logo.png" height="50" style="padding-right:40px">
 
 <img src="extra/images/Fluentbit_Logo.png" height="50" style="padding-right:40px">
@@ -10,6 +10,7 @@
 
 <img src="extra/images/Quine_Logo.svg" height="40" style="padding-right:40px"> 
 </p>
+
 ---
 
 
