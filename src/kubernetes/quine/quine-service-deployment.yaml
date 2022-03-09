@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quine
+  labels:
+    name: quine-deployment
+    group: quine
+    # run: quine
+spec:
+  selector:
+    matchLabels:
+      name: quine-pod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: quine-pod
+        group: quine
+    spec:
+      containers:
+      - name: quine-pod
+        image: thatdot/quine
+        imagePullPolicy: "IfNotPresent"
+        ports:
+          - containerPort: 8080
+            name: http
+            protocol: TCP          
+      restartPolicy: Always
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: quine-service
+  labels:
+    name: quine-service
+    group: quine
+spec:
+  type: NodePort
+  selector:
+    name: quine-pod
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP

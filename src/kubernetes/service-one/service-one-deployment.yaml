@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-one
+  labels:
+    name: service-one
+    group: apps
+spec:
+  selector:
+    matchLabels:
+      name: service-one-pod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: service-one-pod
+        group: apps
+    spec:
+      containers:
+      - name: service-one-pod
+        image: kevbaker/go-fibonacci-service-fiber:latest
+        imagePullPolicy: "IfNotPresent"
+        ports:
+          - containerPort: 3000
+            name: http
+            protocol: TCP
+        resources:
+          requests:
+            memory: "50Mi"
+            cpu: "500m"
+          limits:
+            memory: "500Mi"
+            cpu: "2000m"
+      restartPolicy: Always
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-one-service
+  labels:
+    name: service-one-service
+    group: apps
+spec:
+  type: NodePort
+  selector:
+    name: service-one-pod
+  ports:
+  - port: 3000
+    targetPort: 3000
+    protocol: TCP
