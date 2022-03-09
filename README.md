@@ -2,13 +2,21 @@
 
 ---
 <p align="center" width="100%">
-<img src="extra/images/Kubernetes_Logo.png" height="50" style="padding-right:50px">
+    <img src="extra/images/Kubernetes_Logo.png" height="50">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<img src="extra/images/Fluentbit_Logo.png" height="50" style="padding-right:50px">
+    <img src="extra/images/Fluentbit_Logo.png" height="50">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<img src="extra/images/Kafka_Logo.png" height="40" style="padding-right:50px">
+    <img src="extra/images/Kafka_Logo.png" height="40">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<img src="extra/images/Quine_Logo.svg" height="40" style="padding-right:50px"> 
+    <img src="extra/images/Quine_Logo.svg" height="40"> 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
 
 ---
