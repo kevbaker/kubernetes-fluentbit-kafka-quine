@@ -24,7 +24,6 @@
 
 This is a project to demonstrate Kubernetes Cluster logging integrated with Quine.
 
----
 ## Project Stack
 
 - **Kind** - A tool for running local Kubernetes clusters.
@@ -35,7 +34,7 @@ This is a project to demonstrate Kubernetes Cluster logging integrated with Quin
 
 
 
----
+
 ## Outcomes
 
 Below are the outcomes from the project.
