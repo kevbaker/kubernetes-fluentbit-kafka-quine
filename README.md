@@ -45,12 +45,15 @@ Here is sample data used to form the Quine "standing query".
 
 #### Sample Data File
 
-Here is a link to a reference data file exported from an active Kafka log stream.
-
+ Here is a [link to a compressed sample data file :package:](extra/data/kafka-topic-output.txt.gz) exported from an active Kafka log stream.
 
 #### Data File Log Samples
 
 Here are sample log file snippets exported from an active Kafka log stream.
+
+* :pushpin: one sample
+* :pushpin: two sample
+* :pushpin: three sample
 
 ### Quine Findings
 
