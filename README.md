@@ -2,13 +2,13 @@
 
 ---
 
-<img src="extra/images/Kubernetes_Logo.png" height="50" style="padding-right:40px">
+<img src="extra/images/Kubernetes_Logo.png" height="50" style="float:right;padding-right:40px">
 
-<img src="extra/images/Fluentbit_Logo.png" height="50" style="padding-right:40px">
+<img src="extra/images/Fluentbit_Logo.png" height="50" style="float:right;padding-right:40px">
 
-<img src="extra/images/Kafka_Logo.png" height="40" style="padding-right:40px">
+<img src="extra/images/Kafka_Logo.png" height="40" style="float:right;padding-right:40px">
 
-<img src="extra/images/Quine_Logo.svg" height="40"> 
+<img src="extra/images/Quine_Logo.svg" height="40" style="float:right;padding-right:40px"> 
 
 ---
 
@@ -18,7 +18,7 @@
 This is a project to demonstrate Kubernetes Cluster logging integrated with Quine.
 
 ---
-## Project Technology
+## Project Stack
 
 - **Kind** - A tool for running local Kubernetes clusters.
 - **Kubernetes** - Container Orchestration System.
