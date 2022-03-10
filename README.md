@@ -1,7 +1,10 @@
-# Kubernetes / Quine Project
+
+
+<h1 align="center">Kubernetes / Quine Project</h1>
 
 ---
 <p align="center" width="100%">
+
 <img src="extra/images/Kubernetes_Logo.png" height="50">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -41,11 +44,12 @@ Below are the outcomes from the project.
 
 ### Sample Data
 
-Here is sample data used to form the Quine "standing query".
+Below is sample data used to form the Quine "standing query".
+
 
 #### Sample Data File
 
- Here is a [link to a compressed sample data file :package:](extra/data/kafka-topic-output.txt.gz) exported from an active Kafka log stream.
+ Here is a [:package: link to a compressed sample data file](extra/data/kafka-topic-output.txt.gz) exported from an active Kafka log stream.
 
 #### Data File Log Samples
 
@@ -55,6 +59,24 @@ Here are sample log file snippets exported from an active Kafka log stream.
 * :pushpin: two sample
 * :pushpin: three sample
 
+
+
+##### horizontalpodautoscaling
+
+```json
+{
+  "@timestamp": 1646239194.285511,
+  "log": "2022-03-02T16:39:18.641434142Z stdout F {\"@timestamp\":1646239156.170701,\"log\":\"2022-03-02T16:39:09.141771216Z stdout F {\\\"@timestamp\\\":1646239049.969076,\\\"log\\\":\\\"2022-03-02T15:40:09.606002004Z stderr F I0302 15:40:09.605799       1 controllermanager.go:574] Started \\\\\\\"horizontalpodautoscaling\\\\\\\"\\\"}\"}"
+}
+```
+
+
+
+
+
+
+
+
 ### Quine Findings
 
 *Quine configurations, outputs and findings here.*
@@ -63,7 +85,30 @@ Here are sample log file snippets exported from an active Kafka log stream.
 
 ## Project Setup
 
-Here are instructions on setting up this project.
+This project was based on the great tutorial from "That DevOps Guy" to setup a Kind configuration for autoscaling Kubernetes. It was extended with Fluentbit, Kafka and Quine. Details are below.
+
+## Setup Kubernetes Horizontal Autoscale
+
+Using the tutorial from "The DevOps Guy" we will setup a Kubernetes cluster with horizontal pod scaling.
+
+* :tv: [Kubernetes pod autoscaling for beginners with kind](https://www.youtube.com/watch?v=FfDI08sgrYY) - Uses `Kind`.
+
+
+## Setup Fluentbit
+
+
+## Setup Kafka
+
+
+## Setup Quine
+
+
+
+
+
+
+
+
 
 ### Commands
 
