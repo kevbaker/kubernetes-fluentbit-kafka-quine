@@ -70,8 +70,9 @@ Here are sample log file snippets exported from an active Kafka log stream.
 }
 ```
 
-
-
+```json
+{"@timestamp":1646644110.080202,"log":"2022-03-07T09:08:30.051273291Z stderr F 2022-03-07 09:08:30.051054 W | etcdserver: read-only range request \"key:\\\"/registry/horizontalpodautoscalers/\\\" range_end:\\\"/registry/horizontalpodautoscalers0\\\" count_only:true \" with result \"range_response_count:0 size:8\" took too long (158.268848ms) to execute"}
+```
 
 
 
@@ -85,22 +86,50 @@ Here are sample log file snippets exported from an active Kafka log stream.
 
 ## Project Setup
 
-This project was based on the great tutorial from "That DevOps Guy" to setup a Kind configuration for autoscaling Kubernetes. It was extended with Fluentbit, Kafka and Quine. Details are below.
-
-## Setup Kubernetes Horizontal Autoscale
-
-Using the tutorial from "The DevOps Guy" we will setup a Kubernetes cluster with horizontal pod scaling.
-
-* :tv: [Kubernetes pod autoscaling for beginners with kind](https://www.youtube.com/watch?v=FfDI08sgrYY) - Uses `Kind`.
+This project was based on projects samples from the "References" below. These were exxtended with Fluentbit, Kafka and Quine. Details are below.
 
 
-## Setup Fluentbit
+### Step: Setup Example Server
+
+This project is setup on a single-node Kubernetes cluster for the complete stack hosted on Ubuntu. This is for demonstration purposes only, in production this would be setup in a multi-Node Kubernetes cluster.
+
+This can be setup on any cloud-based VM or locally in a *nix compatible OS. 
+
+*For the example provisioning code to work below an `apt`-based package manager is needed. This can easily be ported over to whatever package manager is being used.*
 
 
-## Setup Kafka
+### Setup Kubernetes with Kind
+
+Kind is used to manage the single-node cluser in this project.
+
+* [Install Kind from binaries on Linux](https://kind.sigs.k8s.io/docs/user/quick-start/#installing-from-source) - Once complete you will have a working version of Kind running on your server. This can be used to manage a sample cluster on a single-node instance of Kubernetes.
+  
+  ```bash
+  COPY
+  curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64
+  chmod +x ./kind
+  mv ./kind /some-dir-in-your-PATH/kind
+  ```
+
+* Create a sample Kubernetes Cluster using Kind
+  ```bash
+  kind create cluster --name hpa --image kindest/node:v1.18.4
+  ```
 
 
-## Setup Quine
+### Setup Kubernetes Horizontal Autoscale
+
+
+
+### Setup Fluentbit
+
+
+
+### Setup Kafka
+
+
+
+### Setup Quine
 
 
 
@@ -114,5 +143,10 @@ Using the tutorial from "The DevOps Guy" we will setup a Kubernetes cluster with
 
 See `Makefile` for helpful commands using `make help`. These should help to manage the running Kuberntes cluser for this project.
 
-### Steps
 
+
+## References
+
+* [YouTube: Kubernetes pod autoscaling for beginners with kind](https://www.youtube.com/watch?v=FfDI08sgrYY) - Uses `Kind`.
+* [Github: Kubernetes pod autoscaling for beginners with kind](https://github.com/marcel-dempers/docker-development-youtube-series/tree/master/kubernetes/autoscaling/components)
+* [Kubernetes/Quine Azure VM using the above setup](http://40.87.90.44)
