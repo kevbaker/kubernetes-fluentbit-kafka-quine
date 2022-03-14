@@ -116,25 +116,75 @@ Kind is used to manage the single-node cluser in this project.
   kind create cluster --name hpa --image kindest/node:v1.18.4
   ```
 
+* Setup Logging namespace in Kubernetes. This is used by a number of containers.
+
+  ```bash
+  kubectl create namespace logging
+  ```
+
 
 ### Setup Kubernetes Horizontal Autoscale
 
+Follow this guide:
+
+* [YouTube: Kubernetes pod autoscaling for beginners with kind](https://www.youtube.com/watch?v=FfDI08sgrYY) - Uses `Kind`.
 
 
 ### Setup Fluentbit
 
+This setup is based on this [Fluentbit Guide](https://github.com/fluent/fluent-bit-kubernetes-logging)
+
+
+```bash
+kubectl -n logging create -f https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/fluent-bit-service-account.yaml
+kubectl -n logging create -f https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/output/kafka/fluent-bit-configmap.yaml
+kubectl -n logging create -f https://raw.githubusercontent.com/fluent/fluent-bit-kubernetes-logging/master/output/kafka/fluent-bit-ds.yaml
+```
 
 
 ### Setup Kafka
 
+The Kafka setup is based on the [Strimzi project](https://strimzi.io/quickstarts), "Kafka on Kubernetes in a few minutes".
+
+```bash
+kubectl -n logging create -f 'https://strimzi.io/install/latest?namespace=logging'
+kubectl -n logging apply -f https://strimzi.io/examples/latest/kafka/kafka-persistent-single.yaml
+kubectl -n logging wait kafka/my-cluster --for=condition=Ready --timeout=300s 
+```
+
+#### Get Kafka Service URL
+
+Find the Kafka Service name and port on Kubernetes and store for later use.
+
+*Hint: something like "my-cluster-kafka-bootstrap:9092", Kafka generally runs on port "9092".*
+
+`kubectl -n logging get svc`
+
+### FluentBit Configuration for Kafka Target
+
+Set the above Kafka Service name and port in the Fluentbit configuration.
+
+#### Open config:
+
+* `kubectl -n logging edit configmap fluent-bit-config`
+* Set the `Brokers` to `Brokers=my-cluster-kafka-bootstrap:9092`.
+
+#### Restart Fluentbit:
+
+* `kubectl -n logging rollout restart ds/fluent-bit`
 
 
 ### Setup Quine
 
+#### Get Fluentbit Kafka Topic:
 
+Find the topic name which FluentBit will use for sending data, store for later use. *See setting for `topics=`.*
 
+```
+kubectl -n logging get pods -l k8s-app=fluent-bit-logging --no-headers -o custom-columns=NAME:metadata.name | xargs kubectl -n logging logs | grep output:kafka
+```
 
-
+*Hint: Something like "ops.kube-logs-fluentbit.stream.json.001​"*
 
 
 
