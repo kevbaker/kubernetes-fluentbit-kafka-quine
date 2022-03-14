@@ -84,6 +84,8 @@ The output will show the contents of minikube node logs by default (current flue
 kubectl -n logging run kafka-consumer -ti --image=quay.io/strimzi/kafka:0.27.1-kafka-3.0.0 --rm=true --restart=Never -- bin/kafka-console-consumer.sh --bootstrap-server my-cluster-kafka-bootstrap:9092 --topic ops.kube-logs-fluentbit.stream.json.001 --from-beginning
 ```
 
+#### Output to file
+
 ```bash
 kubectl -n logging run kafka-consumer -ti --image=quay.io/strimzi/kafka:0.27.1-kafka-3.0.0 --rm=true --restart=Never -- bin/kafka-console-consumer.sh --bootstrap-server my-cluster-kafka-bootstrap:9092 --topic ops.kube-logs-fluentbit.stream.json.001 --from-beginning > kafka-topic-output.txt
 ```

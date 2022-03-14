@@ -176,9 +176,17 @@ Set the above Kafka Service name and port in the Fluentbit configuration.
 
 ### Setup Quine
 
-#### Get Fluentbit Kafka Topic:
+#### Create Quine Container
 
-Find the topic name which FluentBit will use for sending data, store for later use. *See setting for `topics=`.*
+The below command will create the quine service in our Kubernetes cluster.
+
+```bash
+kubectl -n logging create -f ./src/kubernetes/quine/quine-service-deployment.yaml
+```
+
+#### Get Kafka Topic used by Fluentbit:
+
+Find the topic name which FluentBit will use for sending data, store for later use when configuring the Quine ingest. *See setting for `topics=`.*
 
 ```
 kubectl -n logging get pods -l k8s-app=fluent-bit-logging --no-headers -o custom-columns=NAME:metadata.name | xargs kubectl -n logging logs | grep output:kafka
@@ -186,6 +194,20 @@ kubectl -n logging get pods -l k8s-app=fluent-bit-logging --no-headers -o custom
 
 *Hint: Something like "ops.kube-logs-fluentbit.stream.json.001​"*
 
+
+#### Test Topic with Kafka Consumer
+
+Set above topic name to the `--topic` entry in the below command. You should see a stream of data that is coming from Fluentbit.
+
+```bash
+kubectl -n logging run kafka-consumer -ti --image=quay.io/strimzi/kafka:0.27.1-kafka-3.0.0 --rm=true --restart=Never -- bin/kafka-console-consumer.sh --bootstrap-server my-cluster-kafka-bootstrap:9092 --topic ops.kube-logs-fluentbit.stream.json.001 --from-beginning
+```
+
+#### Setup Quine Ingest Source
+
+Using the above topic name setup a quine ingest.
+
+*NOTE: This can be achieved using the API or to the Quine GUI using an ingress server proxying requests to the Web UI of Quine.*
 
 
 
