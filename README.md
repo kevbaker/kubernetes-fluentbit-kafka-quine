@@ -221,4 +221,4 @@ See `Makefile` for helpful commands using `make help`. These should help to mana
 
 * [YouTube: Kubernetes pod autoscaling for beginners with kind](https://www.youtube.com/watch?v=FfDI08sgrYY) - Uses `Kind`.
 * [Github: Kubernetes pod autoscaling for beginners with kind](https://github.com/marcel-dempers/docker-development-youtube-series/tree/master/kubernetes/autoscaling/components)
-* [Kubernetes/Quine Azure VM using the above setup](http://40.87.90.44)
+
