@@ -12,17 +12,9 @@ exit 1
 
 
 
-MINIKUBE_PROFILE=minikube
-
-
 ### Namespace
 kubectl create namespace logging
 
-# Create Minikube Cluster
-#minikube start  -p $MINIKUBE_PROFILE --memory 8192 --cpus 4 --driver=hyperkit
-
-# List minikube cluster profiles
-minikube profile list
 
 
 

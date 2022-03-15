@@ -178,7 +178,7 @@ Set the above Kafka Service name and port in the Fluentbit configuration.
 
 #### Create Quine Container
 
-The below command will create the quine service in our Kubernetes cluster.
+The below command will create the quine service in our Kubernetes cluster from the open source [thatdot/quine](https://hub.docker.com/r/thatdot/quine) Docker image.
 
 ```bash
 kubectl -n logging create -f ./src/kubernetes/quine/quine-service-deployment.yaml
