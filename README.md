@@ -27,6 +27,20 @@
 
 This is a project to demonstrate Kubernetes Cluster logging integrated with Quine.
 
+
+## Use Case
+
+### Intent
+
+* Discover the series of related events that lead to a Kubernetes Autoscaling Operation
+
+### Qustions
+
+* Is this due to a need for optimization?
+* Is the scale operation due to high traffic, bug or possible unusal hacker-like activity.
+* Should the operations leading to the autoscaling be shut down?
+
+
 ## Project Stack
 
 - **Kind** - A tool for running local Kubernetes clusters.
