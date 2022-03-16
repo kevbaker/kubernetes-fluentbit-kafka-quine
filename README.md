@@ -32,12 +32,14 @@ This is a project to demonstrate Kubernetes Cluster logging integrated with Quin
 
 ### Intent
 
-* Discover the series of related events that lead to a Kubernetes Autoscaling Operation
+* Discover the series of related events that lead to a Kubernetes Autoscaling Operation.
 
-### Qustions
+### Questions
 
-* Is this due to a need for optimization?
-* Is the scale operation due to high traffic, bug or possible unusal hacker-like activity.
+* Is the scale operation due to a need for optimization?
+* Is the scale operation due to a bug such as a memory leak?
+* Is the scale operation due to high traffic on popular container service?
+* Is the scale operation due to high traffic from a possible unusual hacker-like activity?
 * Should the operations leading to the autoscaling be shut down?
 
 
