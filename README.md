@@ -28,11 +28,11 @@
 This is a project to demonstrate Kubernetes Cluster logging integrated with Quine.
 
 
-## Use Case
+## Primary Use Case
 
 ### Intent
 
-Discover the series of related events that lead to a Kubernetes autoscaling operation using <span style="font-weight:500;background-color:AliceBlue">thatDot Quine</span> connected to streaming log data.
+Discover the series of related events that lead to a Kubernetes autoscaling operation using <span style="font-weight:500;background-color:AliceBlue">thatDot Quine</span> connected to streaming log data. 
 
 ### Questions
 
