@@ -32,7 +32,7 @@ This is a project to demonstrate Kubernetes Cluster logging integrated with Quin
 
 ### Intent
 
-* Discover the series of related events that lead to a Kubernetes Autoscaling Operation.
+Discover the series of related events that lead to a Kubernetes autoscaling operation using <span style="font-weight:500;background-color:AliceBlue">thatDot Quine</span> connected to streaming log data.
 
 ### Questions
 
