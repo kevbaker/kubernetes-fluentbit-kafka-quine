@@ -71,13 +71,9 @@ Below is sample data used to form the Quine "standing query".
 
 Here are sample log file snippets exported from an active Kafka log stream.
 
-* :pushpin: one sample
-* :pushpin: two sample
-* :pushpin: three sample
 
 
-
-##### horizontalpodautoscaling
+##### horizontalpodautoscaling :pushpin: 
 
 ```json
 {

@@ -1,3 +1,4 @@
 *.jar
 kafka-topic-output.txt
 
+NOTES.md
