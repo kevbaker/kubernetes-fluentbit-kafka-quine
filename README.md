@@ -98,7 +98,7 @@ Here are sample log file snippets exported from an active Kafka log stream.
 
 ## Project Setup
 
-This project was based on projects samples from the "References" below. These were exxtended with Fluentbit, Kafka and Quine. Details are below.
+This project was based on projects samples from the "References" below. These were extended with Fluentbit, Kafka and Quine. Details are below.
 
 
 ### Step: Setup Example Server
@@ -228,9 +228,12 @@ Using the above topic name setup a quine ingest.
 See `Makefile` for helpful commands using `make help`. These should help to manage the running Kuberntes cluser for this project.
 
 
-
 ## References
 
 * [YouTube: Kubernetes pod autoscaling for beginners with kind](https://www.youtube.com/watch?v=FfDI08sgrYY) - Uses `Kind`.
 * [Github: Kubernetes pod autoscaling for beginners with kind](https://github.com/marcel-dempers/docker-development-youtube-series/tree/master/kubernetes/autoscaling/components)
-
+* [K8s System Logs](https://kubernetes.io/docs/concepts/cluster-administration/system-logs) - System component logs record events happening in cluster, which can be very useful for debugging. You can configure log verbosity to see more or less detail. Logs can be as coarse-grained as showing errors within a component, or as fine-grained as showing step-by-step traces of events (like HTTP access logs, pod state changes, controller actions, or scheduler decisions).
+* [K8s JSON Log Format](https://kubernetes.io/docs/concepts/cluster-administration/system-logs/#json-log-format) - The `--logging-format=json` flag changes the format of logs from klog native
+* [K8s API Server Configuration](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/) - The Kubernetes API server validates and configures data for the api objects which include pods, services, replicationcontrollers, and others.
+* [Kind Runtime Config](https://kind.sigs.k8s.io/docs/user/configuration/#runtime-config) - The Kubernetes API server validates and configures data for the api objects which include pods, services, replicationcontrollers, and others.
+* [JSON Lines Format](https://jsonlines.org/) - JSON Lines text format, also called newline-delimited JSON. JSON Lines is a convenient format for storing structured data that may be processed one record at a time. It works well with unix-style text processing tools and shell pipelines. It's a great format for log files. It's also a flexible format for passing messages between cooperating processes.
