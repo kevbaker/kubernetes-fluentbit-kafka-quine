@@ -1,21 +1,18 @@
-FROM        ubuntu:18.04
-LABEL       Aleksandar Diklic "https://github.com/rastasheep"
+FROM ubuntu:latest
+LABEL       Kevin Baker "https://github.com/kevbaker"
 
-RUN apt-get update
+RUN apt update
 
-RUN apt-get install -y openssh-server
-RUN mkdir /var/run/sshd
+RUN apt install  openssh-server sudo -y
 
-RUN echo 'root:root' |chpasswd
+RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 test 
 
-RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
-RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+RUN usermod -aG sudo test
 
-RUN mkdir /root/.ssh
+RUN service ssh start
 
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN  echo 'test:test' | chpasswd
 
 EXPOSE 22
 
-CMD    ["/usr/sbin/sshd", "-D"]
+CMD ["/usr/sbin/sshd","-D"]
